@@ -1,0 +1,8 @@
+.container {
+	display: flex;
+	height: 100vh;
+	min-height: var(--window-height);
+	min-width: var(--window-width);
+	padding: var(--spacing-medium);
+	width: 100vw;
+}

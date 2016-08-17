@@ -1,0 +1,30 @@
+.error {
+	background-image: linear-gradient(var(--background-color-to), var(--background-color));
+	height: 100%;
+	position: relative;
+	width: 100%;
+}
+
+.center {
+	left: 50%;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.ballOfRage {
+	background-color: #e03174;
+	border-radius: 50%;
+	display: inline-block;
+	height: 100px;
+	width: 100px;
+
+	box-shadow: 0 0 0 30px #486c8d,
+		0 0 0 60px #405d7e,
+		0 0 0 80px #415878;
+}
+
+.title {
+	margin-top: 80px;
+}
