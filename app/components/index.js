@@ -9,10 +9,12 @@ import Container from './Container/Container';
 import DroneError from './DroneError/DroneError';
 import DroneSearch from './DroneSearch/DroneSearch';
 import Icon from './Icon/Icon';
+import SettingsModal from './SettingsModal/SettingsModal';
 
 export default {
 	Container,
 	DroneError,
 	DroneSearch,
-	Icon
+	Icon,
+	SettingsModal
 };

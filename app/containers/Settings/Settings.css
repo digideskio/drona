@@ -1,0 +1,10 @@
+.closeIcon {
+	fill: var(--text-color);
+	position: absolute;
+	right: var(--spacing-medium);
+	top: var(--spacing-medium);
+}
+
+.closeIcon:hover {
+	fill: var(--rad-blue);
+}

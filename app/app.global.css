@@ -22,6 +22,9 @@
 	--window-height: 768px;
 	--window-width: 1024px;
 
+	/* Modal */
+	--modal-background-color: rgba(30, 30, 30, 0.8);
+
 }
 
 /*
