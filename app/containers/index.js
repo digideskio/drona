@@ -6,10 +6,12 @@
  */
 import App from './App/App';
 import Dashboard from './Dashboard/Dashboard';
+import ActivityFeed from './ActivityFeed/ActivityFeed';
 import Settings from './Settings/Settings';
 
 export default {
 	App,
 	Dashboard,
+	ActivityFeed,
 	Settings
 };

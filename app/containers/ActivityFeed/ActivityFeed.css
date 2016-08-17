@@ -1,0 +1,6 @@
+.container {
+	bottom: var(--spacing-medium);
+	left: calc(var(--spacing-medium) * 2);
+	padding-top: calc(var(--spacing-small) + 2px);
+	position: absolute;
+}

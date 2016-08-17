@@ -29,6 +29,9 @@ node_modules
 # OSX
 .DS_Store
 
+# Image folder
+temp
+
 # App packaged
 dist
 release

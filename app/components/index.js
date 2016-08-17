@@ -9,6 +9,7 @@ import Container from './Container/Container';
 import DroneError from './DroneError/DroneError';
 import DroneSearch from './DroneSearch/DroneSearch';
 import Icon from './Icon/Icon';
+import Message from './Message/Message';
 import SettingsModal from './SettingsModal/SettingsModal';
 
 export default {
@@ -16,5 +17,6 @@ export default {
 	DroneError,
 	DroneSearch,
 	Icon,
+	Message,
 	SettingsModal
 };

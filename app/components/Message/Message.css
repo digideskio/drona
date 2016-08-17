@@ -1,0 +1,33 @@
+.container {
+	background-color: var(--modal-background-color);
+	border-radius: 5px;
+	margin-top: var(--spacing-medium);
+	min-height: 50px;
+	padding: var(--spacing-medium);
+	position: relative;
+	width: 300px;
+}
+
+.container:first-child {
+	margin-top: 0;
+}
+
+.message {
+	color: var(--text-color);
+	margin: 0;
+	padding-left: var(--spacing-medium);
+}
+
+.icon {
+	background-color: var(--text-color);
+	border-radius: 50%;
+	height: 50px;
+	fill: var(--background-color);
+	left: -25px;
+	padding: var(--spacing-small);
+	padding-top: calc(var(--spacing-small) + 2px);
+	position: absolute;
+	text-align: center;
+	top: 6px;
+	width: 50px;
+}

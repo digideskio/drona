@@ -8,7 +8,3 @@ export default class Container extends Component {
 		</div>);
 	}
 }
-
-Container.propTypes = {
-	children: PropTypes.element.isRequired
-};

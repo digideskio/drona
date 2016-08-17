@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import drone from '../../drone';
-import { DroneError, DroneSearch } from '../../components';
+
+import React, { Component, PropTypes } from 'react';import drone from '../../drone';
+import { DroneError, DroneSearch, DroneVideo } from '../../components';
 
 import styles from './App.css';
 
@@ -10,41 +10,50 @@ export default class App extends Component {
 
 		this.state = {
 			videoConnected: false,
-			videoError: false
+			videoError: false,
+			video: null
 		};
 	}
 	componentWillMount() {
-		this.video = drone.getVideoStream();
-		this.video.on('data', this.onVideoData.bind(this));
-		this.video.on('error', this.onVideoError.bind(this));
+		// this.video = drone.getPngStream();
+		// this.video.on('data', this.onVideoData.bind(this));
+		// this.video.on('error', this.onVideoError.bind(this));
 	}
 
 	onVideoData(data) {
-		this.setState({
-			videoConnected: true,
-			videoError: false
-		});
-
-		console.log('Video data', data);
+		console.log('VIDEO DATA', data);
+		// fs.writeFile('temp/frame.png', data, (err) => {
+		// 	if (err) {
+		// 		console.log('Error saving frame', err);
+		// 	}
+		// 	this.setState({
+		// 		videoConnected: true,
+		// 		videoError: false,
+		// 		video: // Something
+		// 	});
+		// });
 	}
 
 	onVideoError(err) {
 		this.setState({
 			videoConnected: false,
-			videoError: true
+			videoError: true,
+			video: null
 		});
 
 		console.log('Video error', err);
 	}
 
 	render() {
-		const { videoConnected, videoError } = this.state;
+		const { video, videoConnected, videoError } = this.state;
 		let innerComponent;
 
 		if (videoError) {
 			innerComponent = <DroneError />;
 		} else {
-			innerComponent = videoConnected ? 'C' : <DroneSearch />;
+			innerComponent = videoConnected
+				? <DroneVideo video={video} />
+				: <DroneSearch />;
 		}
 
 		return (<div>
@@ -57,8 +66,4 @@ export default class App extends Component {
 		</div>);
 	}
 }
-
-App.propTypes = {
-	children: PropTypes.oneOf([PropTypes.element, PropTypes.array])
-};
 
