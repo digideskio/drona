@@ -1,49 +1,53 @@
 /* eslint max-len: 0 */
 import webpack from 'webpack';
 import merge from 'webpack-merge';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import baseConfig from './webpack.config.base';
 
 export default merge(baseConfig, {
-  debug: true,
+	debug: true,
 
-  devtool: 'cheap-module-eval-source-map',
+	devtool: 'cheap-module-eval-source-map',
 
-  entry: [
-    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
-    './app/index'
-  ],
+	entry: [
+		'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+		'./app/renderer/index'
+	],
 
-  output: {
-    publicPath: 'http://localhost:3000/dist/'
-  },
+	output: {
+		publicPath: 'http://localhost:3000/dist/'
+	},
 
-  module: {
-    loaders: [
-      {
-        test: /\.global\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?sourceMap'
-        ]
-      },
+	module: {
+		loaders: [
+			{
+				test: /\.global\.css$/,
+				loaders: [
+					'style-loader',
+					'css-loader?sourceMap'
+				]
+			},
 
-      {
-        test: /^((?!\.global).)*\.css$/,
-        loaders: [
-          'style-loader',
-          'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-        ]
-      }
-    ]
-  },
+			{
+				test: /^((?!\.global).)*\.css$/,
+				loaders: [
+					'style-loader',
+					'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+				]
+			}
+		]
+	},
 
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
-  ],
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NoErrorsPlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development')
+		}),
+		new CopyWebpackPlugin([
+			{ from: './public/', to: 'static' }
+		])
+	],
 
-  target: 'electron-renderer'
+	target: 'electron-renderer'
 });

@@ -6,7 +6,7 @@ import baseConfig from './webpack.config.base';
 const config = merge(baseConfig, {
   devtool: 'cheap-module-source-map',
 
-  entry: './app/index',
+  entry: './app/renderer/index',
 
   output: {
     publicPath: '../dist/'
