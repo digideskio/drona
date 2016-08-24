@@ -1,6 +1,7 @@
 import { app, ipcMain } from 'electron';
 import createMainWindow from './createMainWindow';
 import configureStore from '../shared/store/configureStore';
+import droneEventHandler from './drone/eventHandler';
 
 const store = configureStore(undefined, 'main');
 let mainWindow = null;
@@ -14,8 +15,8 @@ function doCreateMainWindow() {
 	mainWindow.on('closed', () => {
 		mainWindow = null;
 	});
+	droneEventHandler(mainWindow, store);
 }
-
 
 ipcMain.on('redux-action', (event, payload) => {
 	store.dispatch(payload);

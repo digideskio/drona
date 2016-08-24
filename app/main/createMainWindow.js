@@ -7,7 +7,7 @@ export default function createWindow(store) {
 	const mainWindow = new BrowserWindow({
 		show: false,
 		width: 1024,
-		height: 728
+		height: 768
 	});
 
 	// set main redux store

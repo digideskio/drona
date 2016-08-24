@@ -1,32 +1,26 @@
-
 import 'dronestream/dist/nodecopter-client.js';
 import React, { Component, PropTypes } from 'react';
 import DroneError from '../../components/DroneError';
 import DroneSearch from '../../components/DroneSearch';
 import DroneVideo from '../../components/DroneVideo';
 
-import styles from './Video.css';
+import styles from './Background.css';
 
-export default class Video extends Component {
+export default class Background extends Component {
 	componentDidMount() {
-		console.log('Requesting video');
 		this.props.requestVideo();
-	}
-
-	componentWillReceiveProps(nextProps) {
-		console.log('will receive', nextProps);
 	}
 
 	render() {
 		const { error, video } = this.props;
-		console.log('P', this.props.drone);
+		console.log('P', this.props);
 		let innerComponent;
 
 		if (error) {
 			innerComponent = <DroneError />;
 		} else {
 			innerComponent = video
-				? <DroneVideo video={video} />
+				? <DroneVideo />
 				: <DroneSearch />;
 		}
 
@@ -41,7 +35,7 @@ export default class Video extends Component {
 	}
 }
 
-Video.propTypes = {
+Background.propTypes = {
 	requestVideo: PropTypes.func,
 	error: PropTypes.object,
 	video: PropTypes.bool

@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 import { ipcRenderer } from 'electron';
 import Container from '../../components/Container';
 import Icon from '../../components/Icon';
-import ActivityFeed from '../ActivityFeed';
 import styles from './Dashboard.css';
 
 export default class Dashboard extends Component {
@@ -15,7 +14,6 @@ export default class Dashboard extends Component {
 
 		const settingsClasses = cn(styles.icon, styles.iconSettings);
 		return (<Container>
-				<ActivityFeed />
 				<Link to="/settings">
 					<Icon glyph="cog" className={settingsClasses} />
 				</Link>
