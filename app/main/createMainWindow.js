@@ -8,10 +8,13 @@ export default function createWindow() {
 	const mainWindow = new BrowserWindow({
 		show: false,
 		width: 1024,
-		height: 768
+		height: 768,
+		center: true,
+		resizable: false,
+		fullscreenable: false,
+		backgroundColor: '#253048',
+		title: 'Drona'
 	});
-
-	mainWindow.maximize();
 
 	mainWindow.loadURL(`file://${__dirname}/../renderer/app.html`);
 
@@ -92,7 +95,7 @@ export default function createWindow() {
 				label: 'Takeoff',
 				accelerator: 'T',
 				click() {
-					drone.t();
+					drone.takeoff();
 				}
 			}]
 		}, {

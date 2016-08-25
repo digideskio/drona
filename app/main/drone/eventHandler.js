@@ -1,11 +1,10 @@
 import { ipcMain } from 'electron';
 import drone from './drone';
 
-export function periodicallyGetAltitude(sender) {
-	// TODO: get this info from the drone itself
-	setInterval(drone.getAltitude.bind(this, altitude => {
-		sender.send('ALTITUDE_RECEIVE', altitude);
-	}), 1000);
+export function getNavData(event) {
+	drone.onNavData(data => {
+		event.sender.send('DATA_RECEIVE', data);
+	});
 }
 
 export default function init() {
@@ -16,6 +15,6 @@ export default function init() {
 	});
 
 	ipcMain.on('DATA_REQUEST', event => {
-		periodicallyGetAltitude(event.sender);
+		getNavData(event);
 	});
 }
