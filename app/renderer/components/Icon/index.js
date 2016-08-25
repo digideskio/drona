@@ -1,6 +1,7 @@
 
 import React, { PropTypes, Component } from 'react';
 
+import Altitude from './Altitude';
 import Camera from './Camera';
 import Cross from './Cross';
 import Cog from './Cog';
@@ -10,6 +11,7 @@ import Question from './Question';
 import Tick from './Tick';
 
 const Icons = {
+	altitude: Altitude,
 	camera: Camera,
 	cog: Cog,
 	cross: Cross,

@@ -10,7 +10,7 @@ export default function createWindow() {
 		width: 1024,
 		height: 768,
 		center: true,
-		resizable: false,
+		resizable: process.env.NODE_ENV === 'development',
 		fullscreenable: false,
 		backgroundColor: '#253048',
 		title: 'Drona'

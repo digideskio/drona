@@ -1,0 +1,9 @@
+.container {
+	background-color: var(--modal-background-color);
+	display: flex;
+	height: 50px;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}

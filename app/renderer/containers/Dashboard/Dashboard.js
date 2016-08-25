@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import cn from 'classnames';
 import { Link } from 'react-router';
 import Container from '../../components/Container';
-import InfoList from '../../components/InfoList';
+import InfoBar from '../../components/InfoBar';
 import Icon from '../../components/Icon';
 
 import styles from './Dashboard.css';
@@ -11,12 +11,13 @@ export default class Dashboard extends Component {
 	componentDidMount() {
 		this.props.requestData();
 	}
+
 	render() {
 		const { drone } = this.props;
 		const settingsClasses = cn(styles.icon, styles.iconSettings);
 
 		return (<Container>
-			<InfoList altitude={drone.demo.altitude} />
+			<InfoBar altitude={drone.demo.altitude} />
 			<Link to="/settings">
 				<Icon glyph="cog" className={settingsClasses} />
 			</Link>
