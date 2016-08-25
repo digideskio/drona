@@ -7,6 +7,7 @@ import Cross from './Cross';
 import Cog from './Cog';
 import Home from './Home';
 import Info from './Info';
+import Plane from './Plane';
 import Question from './Question';
 import Tick from './Tick';
 
@@ -17,6 +18,7 @@ const Icons = {
 	cross: Cross,
 	home: Home,
 	info: Info,
+	plane: Plane,
 	question: Question,
 	tick: Tick
 };

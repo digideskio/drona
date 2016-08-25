@@ -9,6 +9,7 @@ export default class InfoBar extends Component {
 
 		return (<div className={styles.container}>
 			<InfoBarItem glyph="altitude" primaryText={altitude || 0} secondaryText="m" />
+			<InfoBarItem glyph="plane" primaryText={altitude || 0} secondaryText="km/h" />
 		</div>);
 	}
 }
