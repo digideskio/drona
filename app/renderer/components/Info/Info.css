@@ -12,7 +12,7 @@
 	margin-top: 0;
 }
 
-.message {
+.info {
 	color: var(--text-color);
 	margin: 0;
 	padding-left: var(--spacing-medium);

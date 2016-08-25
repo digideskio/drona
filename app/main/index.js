@@ -1,9 +1,7 @@
 import { app, ipcMain } from 'electron';
 import createMainWindow from './createMainWindow';
-import configureStore from '../shared/store/configureStore';
 import droneEventHandler from './drone/eventHandler';
 
-const store = configureStore(undefined, 'main');
 let mainWindow = null;
 
 if (process.env.NODE_ENV === 'development') {
@@ -11,16 +9,12 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 function doCreateMainWindow() {
-	mainWindow = createMainWindow(store);
+	mainWindow = createMainWindow();
 	mainWindow.on('closed', () => {
 		mainWindow = null;
 	});
-	droneEventHandler(mainWindow, store);
+	droneEventHandler(mainWindow);
 }
-
-ipcMain.on('redux-action', (event, payload) => {
-	store.dispatch(payload);
-});
 
 app.on('window-all-closed', () => {
 	if (process.platform !== 'darwin') app.quit();

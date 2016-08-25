@@ -1,25 +1,14 @@
-import * as Actions from '../../shared/actions/drone';
+import { combineReducers } from 'redux';
+import { routerReducer as routing } from 'react-router-redux';
+import drone from './drone';
+import video from './video';
 
-const initialState = {
-	error: null,
-	drone: null,
-	video: null
-};
+export default function getRootReducer() {
+	const reducers = {
+		drone,
+		routing,
+		video
+	};
 
-export default function droneRenderer(state = initialState, action) {
-	console.log('droneRenderer', action.type);
-	switch (action.type) {
-		case Actions.VIDEO_RECEIVE:
-			if (action.payload === true) {
-				return Object.assign({}, state, {
-					video: true
-				});
-			}
-			return Object.assign({}, state, {
-				video: null,
-				error: action.payload
-			});
-		default:
-			return state;
-	}
+	return combineReducers({ ...reducers });
 }

@@ -5,38 +5,23 @@ import createLogger from 'redux-logger';
 import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 import getRootReducer from '../reducers';
-import forwardToMain from './middleware/forwardToMain';
-import forwardToRenderer from './middleware/forwardToRenderer';
+import events from './events';
 
 export default function configureStore(initialState, scope = 'main') {
 	const logger = createLogger({
-		level: scope === 'main' ? undefined : 'info',
+		level: 'info',
 		collapsed: true,
 	});
 	const router = routerMiddleware(hashHistory);
 
-	let middleware = [
+	const middleware = [
 		thunk,
 		promise,
+		router
 	];
 
 	if (!process.env.NODE_ENV) {
 		middleware.push(logger);
-	}
-
-	if (scope === 'renderer') {
-		middleware = [
-			forwardToMain,
-			router,
-			...middleware,
-		];
-	}
-
-	if (scope === 'main') {
-		middleware = [
-			...middleware,
-			forwardToRenderer,
-		];
 	}
 
 	const enhanced = [
@@ -52,6 +37,8 @@ export default function configureStore(initialState, scope = 'main') {
 			store.replaceReducer(require('../reducers'));
 		});
 	}
+
+	events(store);
 
 	return store;
 }

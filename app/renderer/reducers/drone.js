@@ -1,16 +1,14 @@
 import * as Actions from '../actions/drone';
-
-const initialState = {
-	error: null,
-	drone: null,
-	video: null
-};
+import { drone as initialState } from './initialState';
 
 export default function drone(state = initialState, action) {
 	switch (action.type) {
-		case Actions.VIDEO_RECEIVE:
+		case Actions.ALTITUDE_RECEIVE:
+			console.log('AA', Object.assign({}, state, {
+				altitude: action.payload
+			}));
 			return Object.assign({}, state, {
-				video: true
+				altitude: action.payload
 			});
 		default:
 			return state;

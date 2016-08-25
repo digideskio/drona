@@ -12,14 +12,13 @@ export default class Background extends Component {
 	}
 
 	render() {
-		const { error, video } = this.props;
-		console.log('P', this.props);
+		const { video } = this.props;
 		let innerComponent;
 
-		if (error) {
+		if (video.error) {
 			innerComponent = <DroneError />;
 		} else {
-			innerComponent = video
+			innerComponent = video.connected
 				? <DroneVideo />
 				: <DroneSearch />;
 		}
@@ -37,6 +36,5 @@ export default class Background extends Component {
 
 Background.propTypes = {
 	requestVideo: PropTypes.func,
-	error: PropTypes.object,
-	video: PropTypes.bool
+	video: PropTypes.object
 };

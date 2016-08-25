@@ -1,10 +1,12 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as Actions from '../../../shared/actions/drone';
+import * as Actions from '../../actions/video';
 import Background from './Background';
 
 function mapStateToProps(state) {
-	return state.drone;
+	return {
+		video: state.video
+	};
 }
 
 function mapDispatchToProps(dispatch) {

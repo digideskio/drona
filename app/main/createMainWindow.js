@@ -1,6 +1,7 @@
 import { app, BrowserWindow, Menu } from 'electron';
+import drone from './drone/drone';
 
-export default function createWindow(store) {
+export default function createWindow() {
 	let menu;
 	let template;
 
@@ -9,9 +10,6 @@ export default function createWindow(store) {
 		width: 1024,
 		height: 768
 	});
-
-	// set main redux store
-	mainWindow.initialState = store.getState();
 
 	mainWindow.maximize();
 
@@ -89,30 +87,12 @@ export default function createWindow(store) {
 				selector: 'selectAll:'
 			}]
 		}, {
-			label: 'View',
-			submenu: (process.env.NODE_ENV === 'development') ? [{
-				label: 'Reload',
-				accelerator: 'Command+R',
+			label: 'Controls',
+			submenu: [{
+				label: 'Takeoff',
+				accelerator: 'T',
 				click() {
-					mainWindow.restart();
-				}
-			}, {
-				label: 'Toggle Full Screen',
-				accelerator: 'Ctrl+Command+F',
-				click() {
-					mainWindow.setFullScreen(!mainWindow.isFullScreen());
-				}
-			}, {
-				label: 'Toggle Developer Tools',
-				accelerator: 'Alt+Command+I',
-				click() {
-					mainWindow.toggleDevTools();
-				}
-			}] : [{
-				label: 'Toggle Full Screen',
-				accelerator: 'Ctrl+Command+F',
-				click() {
-					mainWindow.setFullScreen(!mainWindow.isFullScreen());
+					drone.t();
 				}
 			}]
 		}, {
