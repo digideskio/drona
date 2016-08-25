@@ -3,6 +3,10 @@ import drone from './drone';
 
 export function getNavData(event) {
 	drone.onNavData(data => {
+		if (!data) {
+			return;
+		}
+
 		event.sender.send('DATA_RECEIVE', data);
 	});
 }

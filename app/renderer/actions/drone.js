@@ -21,7 +21,6 @@ export function takeOff() {
 }
 
 export function receiveData(payload) {
-	console.log('data', payload);
 	return {
 		type: DATA_RECEIVE,
 		payload

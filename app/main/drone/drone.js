@@ -3,6 +3,8 @@ import drone from 'ar-drone';
 
 const client = drone.createClient();
 
+client.config('general:navdata_demo', 'FALSE');
+
 client.server = () => {
 	require('ar-drone-png-stream')(client, { port: 8000 });
 
