@@ -37,11 +37,11 @@
 }
 
 /*
- * Make html take up the entire screen
- * Then set touch-action to avoid touch delay on mobile IE
+ * Make html take up the entire screen. No scroll
  */
 html {
 	width: 100%;
+	overflow: hidden;
 	min-height: 100vh;
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;

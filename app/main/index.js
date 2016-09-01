@@ -1,6 +1,6 @@
-import { app, ipcMain } from 'electron';
+import { app } from 'electron';
 import createMainWindow from './createMainWindow';
-import droneEventHandler from './drone/eventHandler';
+import droneEventHandler from './drone/rendererEventHandler';
 
 let mainWindow = null;
 

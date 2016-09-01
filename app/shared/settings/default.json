@@ -1,0 +1,25 @@
+{
+	"keyBindings": {
+		"takeoff": "Q",
+		"land": "Z",
+		"up": "W",
+		"down": "S",
+		"left": "A",
+		"right": "D",
+		"forward": "Up",
+		"backward": "Down",
+		"counterClockwise": "Left",
+		"clockwise": "Right",
+		"stop": "Space"
+	},
+	"speed": {
+		"up": 0.5,
+		"down": 0.5,
+		"left": 0.5,
+		"right": 0.5,
+		"counterClockwise": 0.5,
+		"clockwise" : 0.5,
+		"forward": 0.5,
+		"backward": 0.5
+	}
+}
