@@ -8,7 +8,7 @@ client.config('general:navdata_demo', 'FALSE');
 const drone = {
 	client,
 	server: () => {
-		require('ar-drone-png-stream')(client, { port: 8000 });
+		require('ar-drone-png-stream')(client, { port: 5000 });
 
 		return new Promise(res => {
 			res(true);

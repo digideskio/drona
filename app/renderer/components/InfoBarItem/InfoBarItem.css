@@ -1,7 +1,6 @@
 .container {
 	align-items: center;
 	display: flex;
-	flex-grow: 1;
 	padding: var(--spacing-small) var(--spacing-medium);
 }
 
@@ -21,4 +20,16 @@
 	font-size: 15px;
 	margin: 0;
 	padding-left: var(--spacing-small);
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+.batteryOk {
+	fill: green;
+}
+
+.batteryLow {
+	fill: red;
 }

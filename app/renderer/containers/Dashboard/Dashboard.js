@@ -17,7 +17,7 @@ export default class Dashboard extends Component {
 		const settingsClasses = cn(styles.icon, styles.iconSettings);
 
 		return (<Container>
-			<InfoBar altitude={drone.demo.altitude} />
+			<InfoBar {...drone.demo} />
 			<Link to="/settings">
 				<Icon glyph="cog" className={settingsClasses} />
 			</Link>

@@ -2,6 +2,11 @@
 import React, { PropTypes, Component } from 'react';
 
 import Altitude from './Altitude';
+import Battery0 from './Battery0';
+import Battery25 from './Battery25';
+import Battery50 from './Battery50';
+import Battery75 from './Battery75';
+import Battery100 from './Battery100';
 import Camera from './Camera';
 import Cross from './Cross';
 import Cog from './Cog';
@@ -13,6 +18,11 @@ import Tick from './Tick';
 
 const Icons = {
 	altitude: Altitude,
+	battery0: Battery0,
+	battery25: Battery25,
+	battery50: Battery50,
+	battery75: Battery75,
+	battery100: Battery100,
 	camera: Camera,
 	cog: Cog,
 	cross: Cross,
