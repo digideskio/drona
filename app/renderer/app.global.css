@@ -78,12 +78,14 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 
 h1, .h1 {
 	font-size: 26px;
+	line-height: 26px;
 	margin-bottom: var(--spacing-medium);
 	margin-top: var(--spacing-medium);
 }
 
 h2, .h2 {
 	font-size: 20px;
+	line-height: 20px;
 	margin-bottom: var(--spacing-medium);
 	margin-top: var(--spacing-medium);
 }
@@ -91,6 +93,7 @@ h2, .h2 {
 h3, .h3 {
 	color: var(--rad-blue);
 	font-size: 16px;
+	line-height: 16px;
 	margin-bottom: var(--spacing-small);
 	margin-top: var(--spacing-small);
 }
@@ -98,18 +101,21 @@ h3, .h3 {
 h4, .h4 {
 	color: var(--rad-blue);
 	font-size: 14px;
+	line-height: 14px;
 	margin-bottom: var(--spacing-small);
 	margin-top: var(--spacing-small);
 }
 
 h5, .h5 {
 	font-size: 12px;
+	line-height: 12px;
 	margin-bottom: var(--spacing-small);
 	margin-top: var(--spacing-small);
 }
 
 h6, .h6 {
 	font-size: 11px;
+	line-height: 11px;
 	margin-bottom: var(--spacing-small);
 	margin-top: var(--spacing-small);
 }

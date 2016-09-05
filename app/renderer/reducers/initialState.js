@@ -1,3 +1,5 @@
+import { getSettings } from '../../shared/settings';
+
 export const drone = {
 	flying: 0,
 	videoEnabled: 0,
@@ -69,3 +71,5 @@ export const video = {
 	connected: false,
 	error: null
 };
+
+export const settings = getSettings();

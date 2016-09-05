@@ -40,6 +40,12 @@ InfoBarItem.propTypes = {
 	secondaryClassName: PropTypes.string,
 	iconClassName: PropTypes.string,
 	glyph: PropTypes.string.isRequired,
-	primaryText: PropTypes.string.isRequired,
-	secondaryText: PropTypes.string.isRequired
+	primaryText: React.PropTypes.oneOfType([
+		React.PropTypes.string,
+		React.PropTypes.number
+	]).isRequired,
+	secondaryText: React.PropTypes.oneOfType([
+		React.PropTypes.string,
+		React.PropTypes.number
+	]).isRequired
 };

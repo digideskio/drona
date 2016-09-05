@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import Icon from '../../components/Icon';
-import SettingsModal from '../../components/SettingsModal';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from '../../actions/settings';
+import Settings from './Settings';
 
-import styles from './Settings.css';
-
-export default class Settings extends Component {
-	render() {
-		return (<SettingsModal>
-			<Link to="/">
-				<Icon glyph="cross" className={styles.closeIcon} />
-			</Link>
-		</SettingsModal>);
-	}
+function mapStateToProps({ settings }) {
+	return { settings };
 }
+
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators(Actions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);
