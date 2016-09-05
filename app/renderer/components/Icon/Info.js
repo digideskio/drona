@@ -23,6 +23,6 @@ export default class Info extends Component {
 	}
 }
 
-Info.PropTypes = {
+Info.propTypes = {
 	size: PropTypes.number.isRequired
 };

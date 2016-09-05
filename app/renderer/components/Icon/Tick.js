@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-export default class Temperature extends Component {
+export default class Tick extends Component {
 	render() {
 		const size = this.props.size;
 
@@ -13,6 +13,6 @@ export default class Temperature extends Component {
 	}
 }
 
-Temperature.propTypes = {
+Tick.propTypes = {
 	size: PropTypes.number.isRequired
 };

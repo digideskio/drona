@@ -8,13 +8,24 @@ import Battery50 from './Battery50';
 import Battery75 from './Battery75';
 import Battery100 from './Battery100';
 import Camera from './Camera';
+import Clockwise from './Clockwise';
 import Cross from './Cross';
 import Cog from './Cog';
+import CounterClockwise from './CounterClockwise';
+import Down from './Down';
+import DownRound from './DownRound';
+import DownSquare from './DownSquare';
+import Hold from './Hold';
 import Home from './Home';
 import Info from './Info';
+import Left from './Left';
 import Plane from './Plane';
 import Question from './Question';
+import Right from './Right';
 import Tick from './Tick';
+import Up from './Up';
+import UpRound from './UpRound';
+import UpSquare from './UpSquare';
 
 const Icons = {
 	altitude: Altitude,
@@ -24,13 +35,24 @@ const Icons = {
 	battery75: Battery75,
 	battery100: Battery100,
 	camera: Camera,
+	clockwise: Clockwise,
 	cog: Cog,
 	cross: Cross,
+	counterClockwise: CounterClockwise,
+	down: Down,
+	downRound: DownRound,
+	downSquare: DownSquare,
+	hold: Hold,
 	home: Home,
 	info: Info,
+	left: Left,
 	plane: Plane,
 	question: Question,
-	tick: Tick
+	right: Right,
+	tick: Tick,
+	up: Up,
+	upRound: UpRound,
+	upSquare: UpSquare
 };
 
 const sizes = {

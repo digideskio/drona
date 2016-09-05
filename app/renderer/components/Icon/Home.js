@@ -18,6 +18,6 @@ export default class Home extends Component {
 	}
 }
 
-Home.PropTypes = {
+Home.propTypes = {
 	size: PropTypes.number.isRequired
 };

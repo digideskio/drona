@@ -14,6 +14,6 @@ export default class Cross extends Component {
 	}
 }
 
-Cross.PropTypes = {
+Cross.propTypes = {
 	size: PropTypes.number.isRequired
 };

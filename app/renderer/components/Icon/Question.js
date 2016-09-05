@@ -23,6 +23,6 @@ export default class Question extends Component {
 	}
 }
 
-Question.PropTypes = {
+Question.propTypes = {
 	size: PropTypes.number.isRequired
 };

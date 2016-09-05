@@ -37,6 +37,6 @@ export default class Cog extends Component {
 	}
 }
 
-Cog.PropTypes = {
+Cog.propTypes = {
 	size: PropTypes.number.isRequired
 };
